@@ -13,8 +13,53 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
+  margin: 20px;
+
+  /* display: flex; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   /*
    * CSS image reference example.
    */
   background-image: url('./images/bg-pattern.png');
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+/* .photo-card {
+  display: flex;
+  flex-wrap: wrap;
+} */
+.gallery-item {
+  list-style: none;
+}
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.stats-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 3px;
+  font-size: small;
+}
+.loadMoreBtn {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.photo-card {
+  margin-bottom: 20px;
+}
+.stats {
+  border: solid 1px;
+  margin: 0;
+  padding: 0;
 }
