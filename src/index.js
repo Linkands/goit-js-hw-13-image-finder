@@ -2,7 +2,6 @@ import './styles.css'
 import './partials/photocard.hbs'
 import { fetchPictures } from './js/apiService.js'
 import galleryList from './partials/galleryList.hbs'
-var debounce = require('lodash.debounce')
 
 const refs = {
   searchInput: document.querySelector('.search-form'),
@@ -44,12 +43,13 @@ function renderPictures() {
       pageNumber += 1
       const galleryMarkup = galleryList(picture)
       refs.galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup)
-      if (pageNumber >= 3) {
+      function scroll() {
         refs.galleryContainer.scrollIntoView({
           behavior: 'smooth',
           block: 'end',
         })
       }
+      setTimeout(scroll, 500)
     })
     .catch((error) => console.log(error))
 }
