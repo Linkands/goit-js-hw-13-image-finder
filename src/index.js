@@ -49,7 +49,9 @@ function renderPictures() {
           block: 'end',
         })
       }
-      setTimeout(scroll, 500)
+      if (pageNumber >= 3) {
+        setTimeout(scroll, 500)
+      }
     })
     .catch((error) => console.log(error))
 }
