@@ -35,6 +35,13 @@ function onSearchInputChange(e) {
 
 function loadMorePictures() {
   renderPictures()
+  function scroll() {
+    refs.galleryContainer.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+    })
+  }
+  setTimeout(scroll, 750)
 }
 
 function renderPictures() {
@@ -43,15 +50,6 @@ function renderPictures() {
       pageNumber += 1
       const galleryMarkup = galleryList(picture)
       refs.galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup)
-      function scroll() {
-        refs.galleryContainer.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end',
-        })
-      }
-      if (pageNumber >= 3) {
-        setTimeout(scroll, 500)
-      }
     })
     .catch((error) => console.log(error))
 }
